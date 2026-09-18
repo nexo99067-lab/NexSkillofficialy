@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NexSkill — Digital Marketing Solutions</title>
+<style>
+:root{
+  --bg:#020817;--bg2:#06142a;--panel:#071b35;--panel2:#0b2444;
+  --line:rgba(66,157,255,.28);--text:#f7f9ff;--muted:#a9bad0;
+  --blue:#168cff;--cyan:#43d9ff;--purple:#8155ff;--green:#55e2a0;--gold:#ffd15a;
+  --shadow:0 24px 70px rgba(0,0,0,.34)
+}
+*{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:82px;
+}
+body{margin:0;background:
+radial-gradient(circle at 8% 9%,rgba(48,90,255,.18),transparent 22%),
+radial-gradient(circle at 92% 20%,rgba(0,170,255,.15),transparent 25%),
+linear-gradient(180deg,#020713,#04132a 45%,#020817);
+color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+.container{width:min(1120px,calc(100% - 34px));margin:auto}
+section{
+  position:relative;
+  padding:96px 0;
+  border-top:1px solid rgba(83,157,231,.18);
+  scroll-margin-top:82px;
+}
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.is-visible{opacity:1;transform:none}
+.reveal-section{
+  scroll-margin-top:82px;
+}
+.section-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:52px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#b9d6f3;border:1px solid rgba(65,170,255,.35);background:rgba(8,31,59,.65);border-radius:999px;padding:7px 12px;font-size:11px}
+.eyebrow:before{content:"↗";color:var(--cyan)}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(42px,6vw,66px);line-height:.98;letter-spacing:-3px;margin:18px 0}
+h2{font-size:clamp(32px,4vw,48px);line-height:1.02;letter-spacing:-2px;margin:10px 0 15px}
+h3{font-size:18px;margin:0 0 5px}
+.gradient{background:linear-gradient(90deg,#37d7ff,#268bff,#8b55ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.copy{color:var(--muted);font-size:14px;max-width:570px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(75,174,255,.45);font-size:12px;font-weight:750}
+.btn.primary{background:linear-gradient(100deg,#168cff,#4c63ff);border:0;box-shadow:0 12px 30px rgba(22,140,255,.22)}
+.btn.ghost{background:rgba(7,22,43,.55)}
+.logo{display:flex;align-items:center;gap:9px;font-size:21px;font-weight:850;letter-spacing:-.8px}
+.logo-mark{width:29px;height:29px;border-radius:8px;background:linear-gradient(135deg,#1495ff,#2366ff);display:grid;place-items:center;box-shadow:0 0 24px rgba(22,140,255,.35)}
+.logo-mark svg{width:20px}
+
+
+.icon{
+  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  flex:0 0 auto;color:#61dcff;
+  background:linear-gradient(145deg,rgba(25,100,180,.45),rgba(52,53,135,.45));
+  border:1px solid rgba(74,179,255,.32);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+}
+.icon svg{width:20px;height:20px;display:block}
+.metric .icon{border-radius:50%;background:rgba(18,91,171,.2)}
+
+/* header */
+header{height:66px;position:sticky;top:0;z-index:20;background:rgba(2,9,22,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(75,161,255,.2)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.navlinks{display:flex;gap:31px;font-size:11px;color:#d1ddef}
+.navlinks a{position:relative;padding:24px 0}
+.navlinks a:hover{color:#fff}
+.navlinks a.active:after{content:"";position:absolute;height:2px;left:0;right:0;bottom:15px;background:var(--cyan)}
+.header-btn{font-size:11px;padding:9px 15px}
+
+/* hero */
+.hero{padding:62px 0 42px;border-top:0}
+.hero-copy{padding-left:18px}
+.hero-art{min-width:0;filter:drop-shadow(0 30px 55px rgba(0,91,255,.13))}
+.hero-card{position:relative}
+.hero-card svg{display:block;width:100%;height:auto}
+.hero-card .float{animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-5px)}}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);margin-top:18px;border:1px solid rgba(65,153,255,.45);border-radius:18px;background:rgba(5,20,42,.85);box-shadow:var(--shadow);overflow:hidden}
+.metric{padding:18px 20px;display:flex;align-items:center;gap:13px;min-width:0}
+.metric+ .metric{border-left:1px solid rgba(89,152,220,.22)}
+.metric-icon{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:rgba(19,105,204,.18);border:1px solid rgba(54,174,255,.3);font-size:19px;flex:0 0 auto}
+.metric:nth-child(2) .metric-icon{background:rgba(128,68,255,.18)}
+.metric:nth-child(3) .metric-icon{background:rgba(30,210,180,.16)}
+.metric:nth-child(4) .metric-icon{background:rgba(255,193,46,.16)}
+.metric strong{font-size:25px;display:block;line-height:1.1}
+.metric span{font-size:11px;color:#c0cee0}
+
+/* services */
+.services{background:linear-gradient(180deg,transparent,rgba(8,31,59,.2),transparent)}
+.service-cards{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.service{padding:18px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,rgba(12,36,68,.8),rgba(5,19,39,.82));display:flex;gap:14px;min-height:96px;transition:.3s}
+.service:hover{transform:translateY(-4px);border-color:rgba(64,193,255,.55)}
+.service-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#183b74,#192e68);color:#4bd7ff;flex:0 0 auto}
+.service p{font-size:11px;color:#9db0c9;margin:0}
+.arrow{margin-left:auto;color:#b7d2ee;font-size:18px}
+
+/* performance */
+.performance{padding-top:92px}
+.performance-art{position:relative;min-height:310px}
+.performance-art svg{display:block;width:100%}
+.performance-copy{padding-left:12px}
+.snapshot{border:1px solid var(--line);border-radius:15px;background:rgba(8,26,51,.84);padding:16px}
+.snapshot-title{font-size:11px;color:var(--cyan);font-weight:750}
+.snapshot h3{font-size:24px;margin:8px 0}
+.snapshot p{font-size:11px;color:var(--muted)}
+.snapshot .btn{margin-top:8px}
+.mini-chart{border:1px solid var(--line);border-radius:13px;padding:15px;background:rgba(6,20,40,.76)}
+.mini-chart strong{font-size:17px;color:var(--cyan)}
+.bars{height:80px;display:flex;align-items:end;gap:7px;margin-top:10px}
+.bars i{display:block;flex:1;height:var(--h);border-radius:4px 4px 0 0;background:linear-gradient(180deg,#3ddcff,#435cff);animation:pulse 2.7s ease-in-out infinite alternate}
+@keyframes pulse{to{filter:brightness(1.35);transform:scaleY(1.03)}}
+.chart-list{font-size:10px;color:#b4c4d9;display:grid;gap:6px;margin-top:10px}
+.chart-list b{float:right;color:#fff}
+
+
+/* live analytics */
+.live-analytics{margin-top:18px;border:1px solid var(--line);border-radius:16px;background:rgba(5,19,39,.82);padding:15px;box-shadow:0 16px 45px rgba(0,0,0,.2)}
+.live-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.live-title{font-size:11px;font-weight:800;color:#dceaff}
+.live-state{font-size:9px;color:#65e3ad;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#48e3a2;box-shadow:0 0 12px #48e3a2;animation:livePulse 1.5s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.35;transform:scale(.72)}}
+.live-chart{height:116px;width:100%;display:block}
+.live-grid{stroke:rgba(137,174,213,.13);stroke-width:1}
+.live-line{fill:none;stroke:url(#liveStroke);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 7px rgba(50,201,255,.45));transition:d .65s ease}
+.live-area{fill:url(#liveArea);opacity:.23}
+.live-point{fill:#72e5ff;stroke:#061a32;stroke-width:3;transition:cy .65s ease,cx .65s ease}
+.live-values{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:9px}
+.live-value{padding:9px 10px;border:1px solid rgba(89,160,226,.16);border-radius:10px;background:rgba(10,32,61,.6)}
+.live-value b{display:block;font-size:15px;color:#fff}.live-value span{font-size:8px;color:#8fa7c0}
+.visual-photo{position:relative;overflow:hidden;border-radius:12px}
+.visual-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,127,255,.15),transparent 50%,rgba(126,76,255,.2));pointer-events:none}
+@media(max-width:620px){.live-values{grid-template-columns:1fr 1fr 1fr}.live-chart{height:105px}}
+
+/* portfolio */
+.portfolio{padding-top:96px}
+.portfolio-head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:30px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(145deg,rgba(10,32,61,.92),rgba(4,16,34,.92));transition:.35s;box-shadow:0 18px 50px rgba(0,0,0,.22)}
+.project:hover{transform:translateY(-6px);border-color:rgba(65,191,255,.58)}
+.project-art{height:180px;background:#08172d}
+.project-art svg{width:100%;height:100%;display:block}
+.project-copy{padding:15px}
+.project-copy small{color:#d0def0;font-size:10px}
+.project-copy h3{font-size:14px}
+.project-copy p{font-size:11px;color:#8fa5bf;margin:3px 0}
+.project-copy .result{color:var(--green);font-weight:800;margin-top:9px}
+
+
+.person .avatar.photo{
+  width:42px;height:42px;border-radius:50%;overflow:hidden;
+  background:#102746;border:1px solid rgba(85,178,255,.35);
+}
+.person .avatar.photo img{
+  width:100%;height:100%;display:block;object-fit:cover;
+}
+
+/* testimonials */
+.testimonials{background:linear-gradient(180deg,rgba(7,26,52,.15),rgba(8,29,57,.3))}
+.test-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}
+.test{padding:19px;border:1px solid var(--line);border-radius:14px;background:rgba(8,29,55,.76);min-width:0}
+.person{display:flex;align-items:center;gap:10px;margin-bottom:13px}
+.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2b8eff,#8056ff);font-weight:800}
+.test p{font-size:11px;color:#afbed1}
+.stars{color:var(--gold);font-size:12px;letter-spacing:2px}
+.pop{border-color:#4d74ff;box-shadow:0 0 35px rgba(63,87,255,.12)}
+
+/* pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price-card{position:relative;padding:23px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,rgba(11,32,60,.9),rgba(4,16,34,.92));overflow:hidden}
+.price-card:before{content:"";position:absolute;width:170px;height:170px;right:-90px;top:-90px;border-radius:50%;background:radial-gradient(circle,rgba(46,197,255,.14),transparent 70%)}
+.price-card.popular{border-color:#536eff;box-shadow:0 25px 70px rgba(62,73,255,.15)}
+.badge{position:absolute;right:14px;top:14px;padding:5px 9px;border-radius:999px;background:linear-gradient(90deg,#3a78ff,#7853ff);font-size:9px;font-weight:800}
+.price{font-size:30px;font-weight:850;margin:17px 0 4px}
+.price small{font-size:10px;color:#8299b3;font-weight:500}
+.price-note{font-size:9px;color:#6e87a3}
+.features{list-style:none;padding:0;margin:19px 0;color:#afbed0;font-size:11px}
+.features li{margin:9px 0}.features li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+.price-btn{display:flex;justify-content:center;padding:10px;border-radius:999px;border:1px solid rgba(72,166,255,.45);font-size:11px;font-weight:800}
+.popular .price-btn{background:linear-gradient(100deg,#168cff,#5261ff);border:0}
+
+/* footer */
+footer{padding:30px 0;color:#7189a5;font-size:10px;text-align:center;border-top:1px solid rgba(75,157,234,.18)}
+
+/* responsive + anti-overflow */
+.hero-grid,.section-grid,.portfolio-head{min-width:0}
+h1,h2,h3,p,a,span{overflow-wrap:anywhere}
+@media(max-width:900px){
+ .navlinks{gap:14px}.header-btn{display:none}
+ .section-grid{grid-template-columns:1fr}.hero-copy{padding-left:0}
+ .portfolio-head{grid-template-columns:1fr}
+ .portfolio-grid,.test-grid,.pricing-grid{grid-template-columns:1fr 1fr}
+ .metrics{grid-template-columns:1fr 1fr}.metric:nth-child(3){border-left:0;border-top:1px solid rgba(89,152,220,.22)}.metric:nth-child(4){border-top:1px solid rgba(89,152,220,.22)}
+}
+@media(max-width:620px){
+ section{padding:68px 0}.container{width:calc(100% - 24px)}
+ header{height:60px}.logo{font-size:18px}.logo-mark{width:26px;height:26px}
+ .navlinks{display:none}.nav{justify-content:space-between}
+ .hero{padding-top:32px}.hero-copy{text-align:left}
+ h1{font-size:43px;letter-spacing:-2px}
+ .metrics,.service-cards,.portfolio-grid,.test-grid,.pricing-grid{grid-template-columns:1fr}
+ .metric+.metric{border-left:0;border-top:1px solid rgba(89,152,220,.22)}
+ .metric{padding:15px 17px}
+ .performance-art{min-height:auto}
+ .project-art{height:190px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+ .reveal,.reveal-section{opacity:1!important;transform:none!important}
+}
+</style>
+
+
+
+
+<style>
+.nexskill-support-widget{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:9999;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:10px;
+  pointer-events:none;
+}
+.support-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  pointer-events:auto;
+}
+.support-btn{
+  position:relative;
+  width:178px;
+  min-height:52px;
+  padding:11px 15px;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#fff;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:17px;
+  background:linear-gradient(135deg,rgba(12,30,57,.94),rgba(12,22,43,.92));
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 0 1px rgba(71,166,255,.05);
+  backdrop-filter:blur(18px) saturate(135%);
+  -webkit-backdrop-filter:blur(18px) saturate(135%);
+  transition:transform .28s cubic-bezier(.2,.75,.2,1),
+             box-shadow .28s ease,
+             border-color .28s ease;
+}
+.support-btn::before{
+  content:"";
+  position:absolute;
+  inset:1px;
+  border-radius:16px;
+  background:linear-gradient(110deg,rgba(255,255,255,.07),transparent 42%);
+  pointer-events:none;
+}
+.support-btn:hover{
+  transform:translateX(-6px) translateY(-2px);
+  box-shadow:
+    0 20px 44px rgba(0,0,0,.34),
+    0 0 28px rgba(54,169,255,.14),
+    inset 0 1px 0 rgba(255,255,255,.1);
+}
+.support-btn:focus-visible{
+  outline:3px solid rgba(97,220,255,.55);
+  outline-offset:4px;
+}
+.support-btn.whatsapp{
+  border-color:rgba(47,211,119,.38);
+}
+.support-btn.telegram{
+  border-color:rgba(45,157,255,.42);
+}
+.support-icon{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+}
+.support-icon svg{
+  width:19px;
+  height:19px;
+  display:block;
+}
+.support-btn.whatsapp .support-icon{
+  color:#45df88;
+  background:rgba(48,211,119,.11);
+}
+.support-btn.telegram .support-icon{
+  color:#4eb6ff;
+  background:rgba(48,158,255,.11);
+}
+.support-label{
+  position:relative;
+  z-index:1;
+  font-size:14px;
+  font-weight:750;
+  letter-spacing:.01em;
+}
+.support-panel{
+  opacity:0;
+  transform:translateY(8px);
+  pointer-events:none;
+  padding:10px 14px;
+  border-radius:13px;
+  color:#eaf5ff;
+  background:rgba(9,22,42,.88);
+  border:1px solid rgba(84,173,255,.2);
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  backdrop-filter:blur(15px);
+  transition:opacity .25s ease,transform .25s ease;
+}
+.nexskill-support-widget:hover .support-panel{
+  opacity:1;
+  transform:none;
+}
+.support-panel-title{
+  font-size:13px;
+  font-weight:800;
+}
+.support-panel-subtitle{
+  margin-top:2px;
+  font-size:11px;
+  color:#91abc4;
+}
+@media(max-width:620px){
+  .nexskill-support-widget{
+    right:14px;
+    bottom:14px;
+    gap:8px;
+  }
+  .support-btn{
+    width:52px;
+    min-height:52px;
+    padding:0;
+    justify-content:center;
+    border-radius:16px;
+  }
+  .support-label{
+    display:none;
+  }
+  .support-icon{
+    width:32px;
+    height:32px;
+  }
+  .support-panel{
+    display:none;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .support-btn,.support-panel{transition:none!important}
+}
+</style>
+
+
+<style>
+/* Draggable WhatsApp: independent of the fixed Telegram control */
+.draggable-whatsapp{
+  position:fixed;
+  left:auto;
+  top:auto;
+  right:22px;
+  bottom:84px;
+  z-index:10000;
+  touch-action:none;
+  cursor:grab;
+  user-select:none;
+  -webkit-user-select:none;
+  transition:filter .22s ease;
+}
+.draggable-whatsapp.is-dragging{
+  cursor:grabbing;
+  filter:drop-shadow(0 16px 30px rgba(0,0,0,.32));
+}
+.draggable-whatsapp .support-btn{
+  margin:0;
+}
+.draggable-whatsapp .support-btn:hover{
+  transform:translateY(-2px);
+}
+@media(max-width:620px){
+  .draggable-whatsapp{
+    right:14px;
+    bottom:76px;
+  }
+}
+</style>
+
+
+<style>
+/* Reference-aligned portfolio redesign */
+.portfolio-reference{
+  position:relative;
+  overflow:hidden;
+  padding:104px 0 86px;
+  background:
+    radial-gradient(circle at 12% 28%,rgba(26,103,255,.13),transparent 28%),
+    radial-gradient(circle at 88% 48%,rgba(126,64,255,.12),transparent 30%),
+    linear-gradient(180deg,rgba(2,13,31,.08),rgba(2,13,31,.35));
+}
+.portfolio-reference::before,
+.portfolio-reference::after{
+  content:"";
+  position:absolute;
+  width:520px;height:520px;
+  border-radius:50%;
+  border:1px solid rgba(48,151,255,.09);
+  pointer-events:none;
+}
+.portfolio-reference::before{left:-300px;top:220px}
+.portfolio-reference::after{right:-300px;bottom:40px}
+.portfolio-intro{text-align:center;max-width:780px;margin:0 auto 48px;position:relative;z-index:1}
+.portfolio-intro .eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:11px;
+  color:#6adfff;font-size:12px;font-weight:700;letter-spacing:.03em;margin-bottom:17px;
+}
+.portfolio-intro .eyebrow span{width:29px;height:1px;background:linear-gradient(90deg,transparent,#22c9ff)}
+.portfolio-intro h2{margin:0;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.035em}
+.portfolio-intro h2 em{font-style:normal;background:linear-gradient(90deg,#1bd9ff,#4e88ff,#bd52ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.portfolio-intro p{max-width:650px;margin:16px auto 0;color:#b7c9df;font-size:16px;line-height:1.7}
+.portfolio-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;
+  position:relative;z-index:1;
+}
+.case-card{
+  min-width:0;overflow:hidden;border-radius:21px;
+  border:1px solid rgba(63,153,255,.52);
+  background:linear-gradient(145deg,rgba(8,30,64,.91),rgba(4,18,40,.96));
+  box-shadow:0 20px 55px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.055);
+  transition:transform .55s cubic-bezier(.2,.75,.2,1),box-shadow .55s ease,border-color .45s ease;
+}
+.case-card:hover{transform:translateY(-10px);box-shadow:0 30px 70px rgba(0,0,0,.36),0 0 42px rgba(41,160,255,.15)}
+.case-social{border-color:rgba(139,76,255,.72)}
+.case-social:hover{box-shadow:0 30px 70px rgba(0,0,0,.36),0 0 46px rgba(136,65,255,.2)}
+.case-web{border-color:rgba(30,218,203,.58)}
+.case-web:hover{box-shadow:0 30px 70px rgba(0,0,0,.36),0 0 46px rgba(31,215,202,.15)}
+.case-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 21px 12px}
+.case-title{display:flex;align-items:center;gap:13px;min-width:0}
+.case-icon{
+  width:47px;height:47px;flex:0 0 47px;display:grid;place-items:center;border-radius:13px;
+  color:#fff;background:linear-gradient(145deg,#1978ff,#1455d7);
+  border:1px solid rgba(255,255,255,.15);box-shadow:0 9px 25px rgba(20,109,255,.24);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease;
+}
+.case-social .case-icon{background:linear-gradient(145deg,#7544ff,#4630cc)}
+.case-web .case-icon{background:linear-gradient(145deg,#13c8bb,#087d8c)}
+.case-card:hover .case-icon{transform:rotate(-5deg) scale(1.08);filter:brightness(1.13)}
+.case-icon svg{width:25px;height:25px}
+.case-title h3{margin:0;font-size:17px;line-height:1.2;white-space:nowrap}
+.case-title p{margin:5px 0 0;color:#a9bfda;font-size:11px;white-space:nowrap}
+.case-tag{padding:6px 10px;border:1px solid rgba(69,177,255,.45);border-radius:999px;color:#d7edff;font-size:10px;white-space:nowrap;background:rgba(21,92,180,.16)}
+.case-social .case-tag{border-color:rgba(165,104,255,.5);background:rgba(114,54,202,.15)}
+.case-web .case-tag{border-color:rgba(54,224,211,.4);background:rgba(14,143,137,.14)}
+.case-visual{height:305px;margin:0 9px;border-radius:15px;position:relative;overflow:hidden;background:#06162e}
+.case-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(1,10,25,.28));pointer-events:none}
+.growth-visual{background:radial-gradient(circle at 30% 65%,rgba(18,114,255,.48),transparent 35%),linear-gradient(135deg,#081c3c,#082c5d 55%,#03132b)}
+.visual-glow{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(33,141,255,.24);filter:blur(45px);left:50px;top:70px}
+.phone-mockup{
+  position:absolute;width:151px;height:260px;left:48px;top:28px;border:4px solid #10213b;border-radius:25px;
+  background:linear-gradient(155deg,#102d55,#071a34);box-shadow:15px 20px 35px rgba(0,0,0,.42),0 0 30px rgba(38,153,255,.22);padding:29px 12px 12px;transform:rotate(-7deg);transition:transform .55s cubic-bezier(.2,.75,.2,1);
+}
+.case-card:hover .phone-mockup{transform:rotate(-4deg) translateY(-5px) scale(1.025)}
+.phone-top{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:48px;height:5px;border-radius:10px;background:#152b49}
+.phone-brand{font-size:8px;color:#d9ecff}.phone-brand b{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:5px;background:#1679ff;color:white;margin-right:4px}
+.phone-copy{font-size:17px;font-weight:700;line-height:1.03;margin-top:34px;color:#fff}.phone-copy strong{color:#38cfff}.phone-sub{font-size:7px;color:#b3c8df;margin-top:7px}
+.mini-cta{display:inline-block;margin-top:12px;padding:6px 9px;border-radius:8px;background:#1687ff;color:#fff;font-size:7px;box-shadow:0 7px 15px rgba(18,126,255,.25)}
+.social-dots{display:flex;gap:6px;margin-top:15px}.social-dots i{width:10px;height:10px;border-radius:50%;background:#238cff}
+.mini-chart{position:absolute;bottom:14px;left:12px;right:12px;height:42px;display:flex;align-items:flex-end;gap:7px}.mini-chart span{flex:1;border-radius:4px 4px 1px 1px;background:linear-gradient(#2bd9ff,#2860ff)}
+.ad-platforms{position:absolute;left:20px;bottom:18px;display:flex;flex-direction:column;gap:9px}.ad-platforms span{width:33px;height:33px;border-radius:10px;display:grid;place-items:center;background:rgba(17,91,190,.72);border:1px solid rgba(91,186,255,.4);color:#dff6ff;font-size:16px;box-shadow:0 7px 18px rgba(0,0,0,.2)}
+.result-panel{position:absolute;right:18px;top:51px;width:125px;padding:13px 13px;border-radius:12px;background:rgba(5,26,56,.88);border:1px solid rgba(68,171,255,.55);box-shadow:0 15px 35px rgba(0,0,0,.28);backdrop-filter:blur(10px);transition:transform .45s ease}
+.case-card:hover .result-panel{transform:translateY(-5px)}
+.result-panel small{display:block;color:#91aac5;font-size:8px}.result-panel b{display:block;color:#fff;font-size:19px;margin:2px 0}.result-panel strong{color:#35e6a0;font-size:9px}.result-panel hr{border:0;border-top:1px solid rgba(122,165,205,.15);margin:9px 0}
+.social-visual{background:radial-gradient(circle at 65% 50%,rgba(112,54,255,.3),transparent 36%),linear-gradient(135deg,#100a38,#161252 55%,#090d2c)}
+.social-rail{position:absolute;left:13px;top:34px;display:flex;flex-direction:column;gap:10px}.social-rail span{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:rgba(69,39,158,.72);border:1px solid rgba(169,122,255,.32);color:white;font-weight:700}
+.social-phone{position:absolute;left:74px;top:18px;width:172px;height:273px;border:4px solid #10172f;border-radius:24px;background:#080d21;padding:30px 11px 10px;box-shadow:0 20px 45px rgba(0,0,0,.45);transform:rotate(-2deg);transition:transform .55s ease}
+.case-card:hover .social-phone{transform:rotate(1deg) translateY(-5px)}
+.profile-line{display:flex;align-items:center;gap:6px;color:#fff;font-size:8px}.profile-line b{width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#13c6ff,#7049ff)}
+.profile-stats{display:flex;justify-content:space-between;margin:12px 0;color:#fff;font-size:8px}.profile-stats small{display:block;color:#8090b4;font-size:6px;font-weight:400;margin-top:2px}
+.content-icons{display:flex;gap:6px}.content-icons span{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(112,87,255,.7);background:rgba(72,51,177,.32);color:#bcaaff;font-size:11px}
+.content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:12px}.content-grid i{height:48px;border-radius:5px;background:linear-gradient(135deg,#1c4fa0,#793fe8 50%,#0f213f);border:1px solid rgba(139,91,255,.2)}
+.engagement-panel{position:absolute;right:15px;bottom:29px;width:130px;padding:13px;border-radius:12px;background:rgba(13,14,52,.9);border:1px solid rgba(158,99,255,.55);box-shadow:0 16px 36px rgba(0,0,0,.3);backdrop-filter:blur(10px)}.engagement-panel small{display:block;color:#8f9ec6;font-size:8px;margin-top:5px}.engagement-panel b{display:block;color:#fff;font-size:17px;margin-top:1px}.engagement-panel b::first-letter{color:#5effbf}
+.web-visual{background:linear-gradient(145deg,#0b2e2f,#062e3e 52%,#062022)}
+.laptop{position:absolute;left:26px;top:30px;width:275px;transition:transform .55s cubic-bezier(.2,.75,.2,1)}.case-card:hover .laptop{transform:translateY(-6px) scale(1.02)}
+.laptop-screen{height:176px;border:7px solid #101b28;border-radius:13px 13px 5px 5px;background:#f2f7fc;overflow:hidden;box-shadow:0 16px 34px rgba(0,0,0,.35)}
+.browser-bar{height:20px;background:#e5edf5;display:flex;align-items:center;gap:4px;padding:0 8px}.browser-bar i{width:4px;height:4px;border-radius:50%;background:#8295aa}.browser-bar span{font-size:6px;color:#65788f;margin-left:7px}
+.web-hero{height:100px;background:linear-gradient(125deg,#081e44,#123d7d 60%,#0e6b8b);display:flex;justify-content:space-between;padding:17px 13px;color:#fff;overflow:hidden}.web-hero b{font-size:16px;line-height:1.05}.web-hero em{font-style:normal;color:#39d9ff}.web-hero small{display:block;font-size:6px;color:#bfd8ef;margin-top:6px}.web-hero button,.mobile-web button{margin-top:9px;border:0;border-radius:5px;background:#168cff;color:#fff;font-size:6px;padding:6px 8px}.web-person{width:95px;background:radial-gradient(circle at 55% 40%,#5f8ed1 0 12%,transparent 13%),linear-gradient(150deg,#20334b,#101d2c);clip-path:polygon(45% 5%,85% 17%,100% 100%,0 100%,15% 30%);align-self:end}
+.web-cards{display:flex;gap:6px;padding:9px}.web-cards span{height:24px;flex:1;border-radius:4px;background:#d7e5f2}
+.laptop-base{height:10px;width:315px;margin-left:-20px;border-radius:0 0 25px 25px;background:linear-gradient(#8da2b8,#35475a);box-shadow:0 10px 20px rgba(0,0,0,.25)}
+.mobile-web{position:absolute;right:17px;bottom:21px;width:83px;height:158px;border:4px solid #16202d;border-radius:15px;background:#f5f9fd;padding:18px 7px 7px;color:#17324c;box-shadow:0 17px 35px rgba(0,0,0,.35);transition:transform .5s ease}.case-card:hover .mobile-web{transform:translateY(-7px)}
+.mobile-web .browser-bar{height:9px;margin:-14px -3px 10px}.mobile-web b{font-size:9px;line-height:1.05;display:block}.mobile-web span{display:block;font-size:5px;color:#61778f;margin-top:5px}.mobile-web button{font-size:5px;padding:5px 6px}
+.conversion-panel{position:absolute;right:18px;bottom:18px;padding:11px 13px;width:137px;border-radius:12px;background:rgba(240,255,255,.96);color:#173248;box-shadow:0 16px 32px rgba(0,0,0,.3);transform:translateY(5px);transition:transform .45s ease}.case-card:hover .conversion-panel{transform:translateY(0)}.conversion-panel small{display:block;font-size:8px}.conversion-panel b{display:block;font-size:18px}.conversion-panel strong{font-size:8px;color:#12bda8}.bars{height:25px;display:flex;align-items:flex-end;gap:4px;margin-top:5px}.bars i{width:10px;border-radius:2px 2px 0 0;background:linear-gradient(#27d6c4,#25a7e7)}.bars i:nth-child(1){height:25%}.bars i:nth-child(2){height:42%}.bars i:nth-child(3){height:58%}.bars i:nth-child(4){height:77%}.bars i:nth-child(5){height:100%}
+.case-body{padding:15px 21px 21px}.case-body>p{color:#c7d7e8;font-size:13px;line-height:1.55;min-height:60px;margin:0 0 13px}
+.benefits{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:17px}.benefits span{display:inline-flex;align-items:center;gap:6px;color:#b7cae0;font-size:9px}.benefits i{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;font-style:normal;color:#77dfff;background:rgba(27,123,239,.15);border:1px solid rgba(65,172,255,.35)}
+.case-social .benefits i{color:#c2a4ff;background:rgba(126,64,255,.13);border-color:rgba(159,107,255,.36)}.case-web .benefits i{color:#7af2e5;background:rgba(20,192,180,.12);border-color:rgba(57,224,210,.3)}
+.case-link{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 16px;border-radius:999px;border:1px solid rgba(43,185,255,.85);color:#fff;text-decoration:none;font-size:11px;font-weight:700;background:rgba(8,80,145,.15);transition:background .3s ease,transform .3s ease,box-shadow .3s ease}.case-link span{font-size:17px}.case-link:hover{transform:translateX(3px);background:rgba(24,137,232,.2);box-shadow:0 0 22px rgba(34,166,255,.18)}
+.case-social .case-link{border-color:#9d67ff}.case-web .case-link{border-color:#36ddd0}
+.portfolio-stats{margin:30px 7% 0;padding:21px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border:1px solid rgba(57,155,255,.55);border-radius:20px;background:rgba(6,30,62,.78);box-shadow:0 20px 50px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05);position:relative;z-index:1;backdrop-filter:blur(13px)}
+.portfolio-stats div{text-align:center;border-right:1px solid rgba(113,154,198,.18)}.portfolio-stats div:last-child{border-right:0}.portfolio-stats b{display:block;font-size:25px;background:linear-gradient(90deg,#fff,#55d9ff);-webkit-background-clip:text;background-clip:text;color:transparent}.portfolio-stats span{font-size:9px;color:#8ea9c6}
+@media(max-width:1000px){.portfolio-grid{grid-template-columns:1fr 1fr}.case-web{grid-column:1/-1;max-width:600px;margin:auto;width:100%}.portfolio-stats{margin-left:0;margin-right:0}}
+@media(max-width:700px){.portfolio-reference{padding:76px 0 65px}.portfolio-grid{grid-template-columns:1fr}.case-web{grid-column:auto;max-width:none}.case-visual{height:290px}.portfolio-stats{grid-template-columns:1fr 1fr;padding:18px 14px}.portfolio-stats div:nth-child(2){border-right:0}.portfolio-stats div:nth-child(3){border-top:1px solid rgba(113,154,198,.18);padding-top:16px}.portfolio-stats div:nth-child(4){border-top:1px solid rgba(113,154,198,.18);padding-top:16px}.case-head{padding:17px 16px 11px}.case-body{padding:14px 16px 18px}}
+@media(max-width:420px){.case-title h3{font-size:15px}.case-title p{font-size:9px}.case-tag{font-size:8px}.phone-mockup{left:28px}.result-panel{right:10px}.social-phone{left:55px}.engagement-panel{right:8px}.laptop{left:5px;transform:scale(.88);transform-origin:left top}.case-card:hover .laptop{transform:scale(.9) translateY(-5px)}.conversion-panel{right:8px}.mobile-web{right:7px}}
+@media(prefers-reduced-motion:reduce){.case-card,.case-icon,.phone-mockup,.result-panel,.social-phone,.laptop,.mobile-web,.conversion-panel,.case-link{transition:none!important}}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home" aria-label="NexSkill home">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 18 8 6l4 8 7-9" stroke="white" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m16 5 3 0-1 3" stroke="white" stroke-width="2.7" stroke-linecap="round"/></svg>
+      </span>
+      NexSkill
+    </a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn primary header-btn" href="#pricing">Get Started →</a>
+  </div>
+</header>
+
+<main id="home">
+
+<section class="hero" class="reveal-section">
+ <div class="container">
+  <div class="section-grid">
+   <div class="hero-copy">
+    <span class="eyebrow">Digital Marketing Solutions</span>
+    <h1>Better Creative.<br><span class="gradient">Bigger Results.</span></h1>
+    <p class="copy">We create high-performing campaigns, modern websites and strategic marketing solutions that help brands grow and achieve real results.</p>
+    <div class="btns"><a class="btn primary" href="#contact">Get Started →</a><a class="btn ghost" href="#portfolio">View Our Work ◉</a></div>
+   </div>
+   <div class="hero-art">
+    <div class="hero-card">
+     <svg viewBox="0 0 700 390" role="img" aria-label="Digital marketing analytics dashboard with campaign growth">
+      <defs>
+       <linearGradient id="heroLine" x1="0" x2="1"><stop stop-color="#28d7ff"/><stop offset=".55" stop-color="#277dff"/><stop offset="1" stop-color="#7d50ff"/></linearGradient>
+       <linearGradient id="heroFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#29d7ff" stop-opacity=".3"/><stop offset="1" stop-color="#29d7ff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <rect x="18" y="28" width="300" height="205" rx="14" fill="#071b35" stroke="#278fe0"/>
+      <text x="38" y="57" fill="#9db4cf" font-size="11" font-weight="700">Total Revenue</text>
+      <text x="38" y="89" fill="#fff" font-size="22" font-weight="800">₹12,840</text><text x="145" y="87" fill="#55e2a0" font-size="9" font-weight="800">+62%</text>
+      <path d="M40 190 C80 185 85 157 120 167 S168 135 202 149 S250 112 296 94" fill="none" stroke="url(#heroLine)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M40 190 C80 185 85 157 120 167 S168 135 202 149 S250 112 296 94 L296 205 L40 205Z" fill="url(#heroFill)"/>
+      <g fill="#7088a4" font-size="8"><text x="40" y="219">Jan</text><text x="90" y="219">Feb</text><text x="140" y="219">Mar</text><text x="190" y="219">Apr</text><text x="240" y="219">May</text><text x="286" y="219">Jun</text></g>
+      <g class="float">
+       <rect x="330" y="44" width="310" height="250" rx="16" fill="#122944" stroke="#3c9cff"/>
+       <rect x="346" y="60" width="278" height="204" rx="9" fill="#dce8f1"/>
+       <rect x="366" y="78" width="238" height="135" rx="8" fill="#0b203c"/>
+       <rect x="383" y="94" width="50" height="73" rx="5" fill="#102f52"/><rect x="444" y="116" width="45" height="51" rx="5" fill="#164c78"/><rect x="500" y="102" width="42" height="65" rx="5" fill="#1d69a0"/>
+       <rect x="558" y="84" width="26" height="83" rx="5" fill="#2a8cc8"/>
+       <rect x="380" y="227" width="105" height="8" rx="4" fill="#879fb9"/><rect x="380" y="244" width="155" height="6" rx="3" fill="#aabacc"/>
+      </g>
+      <rect x="398" y="247" width="198" height="93" rx="13" fill="#071b35" stroke="#315f91"/>
+      <text x="415" y="269" fill="#fff" font-size="10" font-weight="800">Top Channels</text>
+      <circle cx="541" cy="291" r="32" fill="none" stroke="#2369ff" stroke-width="12" stroke-dasharray="65 140"/><circle cx="541" cy="291" r="32" fill="none" stroke="#8b55ff" stroke-width="12" stroke-dasharray="42 160" stroke-dashoffset="-65"/><circle cx="541" cy="291" r="32" fill="none" stroke="#24d5cf" stroke-width="12" stroke-dasharray="31 170" stroke-dashoffset="-107"/>
+      <g fill="#9fb3cb" font-size="8"><text x="415" y="292">42%</text><text x="415" y="307">34%</text><text x="415" y="322">18%</text></g>
+      <rect x="562" y="176" width="120" height="95" rx="12" fill="#071b35" stroke="#315f91"/>
+      <text x="576" y="198" fill="#a9bbd0" font-size="9">Conversion Rate</text><text x="576" y="224" fill="#fff" font-size="18" font-weight="800">8.4%</text><text x="576" y="241" fill="#55e2a0" font-size="8" font-weight="800">+3.2%</text>
+      <g fill="#356fff"><rect x="577" y="252" width="8" height="9" rx="2"/><rect x="590" y="246" width="8" height="15" rx="2"/><rect x="603" y="239" width="8" height="22" rx="2"/><rect x="616" y="231" width="8" height="30" rx="2"/><rect x="629" y="222" width="8" height="39" rx="2"/><rect x="642" y="212" width="8" height="49" rx="2"/></g>
+     </svg>
+    </div>
+   </div>
+  </div>
+
+  <div class="metrics" aria-label="Key business metrics">
+   <div class="metric"><div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3.1 2.4-4.8 5.5-4.8s4.9 1.7 5.5 4.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11.5c2.4.2 3.8 1.5 4.4 3.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><strong><span class="counter" data-target="120">0</span>+</strong><span>Active Clients</span></div></div>
+   <div class="metric"><div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 4.2c2.2-.7 4.1-.7 5.3-.5.2 1.2.2 3.1-.5 5.3-1 3.1-3.7 5.9-7.1 7.2l-3.7-3.7c1.3-3.4 4-6.1 7-7.1Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.6 15.4-3.2 1.1-1.1-1.1 1.1-3.2M11.1 18.1l-1.1 3.2-1.1-1.1 1.1-3.2M15.5 8.5h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong><span class="counter" data-target="350">0</span>+</strong><span>Projects Done</span></div></div>
+   <div class="metric"><div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 19 6v5.3c0 4.3-2.7 7.8-7 9.2-4.3-1.4-7-4.9-7-9.2V6l7-2.5Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.7 12 2.1 2.1 4.6-4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong><span class="counter" data-target="98">0</span>%</strong><span>Success Rate</span></div></div>
+   <div class="metric"><div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8v5.3c0 2.6-1.7 4.7-4 4.7s-4-2.1-4-4.7V4Z" stroke="currentColor" stroke-width="1.7"/><path d="M8 6H4.5v2.2c0 2 1.4 3.4 3.4 3.5M16 6h3.5v2.2c0 2-1.4 3.4-3.4 3.5M12 14v4M8.5 20h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><div><strong><span class="counter" data-target="24">0</span>+</strong><span>Awards</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="services" class="services" class="reveal-section">
+ <div class="container section-grid">
+  <div>
+   <div class="label" style="color:var(--cyan);font-size:11px;font-weight:800">— &nbsp;Our Services</div>
+   <h2>Strategy. Creativity.<br>Performance.</h2>
+   <p class="copy">We offer end-to-end digital marketing solutions to help your brand grow, connect and convert.</p>
+   <a class="btn ghost" href="#contact">Explore All Services →</a>
+  </div>
+  <div class="service-cards">
+   <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></div><div><h3>Social Media Marketing</h3><p>Build your brand, grow your audience and increase engagement.</p></div><span class="arrow">→</span></article>
+   <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 19 12l-7 8.5L5 12l7-8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></div><div><h3>Google & Meta Ads</h3><p>Target the right audience and get better ROI.</p></div><span class="arrow">→</span></article>
+   <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="m9 7-5 5 5 5M15 7l5 5-5 5M13 5l-2 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Website Development</h3><p>Modern, fast and conversion-focused websites.</p></div><span class="arrow">→</span></article>
+   <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg></div><div><h3>Content Creation</h3><p>Engaging content that tells your brand's story.</p></div><span class="arrow">→</span></article>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="performance" class="reveal-section">
+ <div class="container section-grid">
+  <div class="performance-art">
+   <svg viewBox="0 0 600 360" role="img" aria-label="Social campaign performance visual">
+    <defs><linearGradient id="phone" x1="0" x2="1"><stop stop-color="#1bcfff"/><stop offset="1" stop-color="#7454ff"/></linearGradient></defs>
+    <circle cx="230" cy="188" r="160" fill="none" stroke="#255eff" stroke-opacity=".18"/>
+    <circle cx="230" cy="188" r="120" fill="none" stroke="#3bd8ff" stroke-opacity=".13"/>
+    <rect x="85" y="28" width="165" height="300" rx="24" transform="rotate(-8 85 28)" fill="#09192e" stroke="#3b6ea0"/>
+    <rect x="99" y="51" width="137" height="245" rx="12" transform="rotate(-8 99 51)" fill="#eaf0f5"/>
+    <rect x="112" y="76" width="111" height="80" rx="8" transform="rotate(-8 112 76)" fill="url(#phone)"/>
+    <circle cx="183" cy="118" r="24" fill="#fff" opacity=".12"/>
+    <text x="128" y="184" fill="#71849b" font-size="9">Social Campaign</text>
+    <rect x="126" y="196" width="77" height="7" rx="3" fill="#9baabd"/><rect x="126" y="210" width="57" height="6" rx="3" fill="#c1ccd8"/>
+    <circle cx="132" cy="265" r="7" fill="#ff4268"/><circle cx="153" cy="265" r="7" fill="#168cff"/><circle cx="174" cy="265" r="7" fill="#7c55ff"/>
+    <rect x="250" y="94" width="245" height="184" rx="14" fill="#081d38" stroke="#315f91"/>
+    <text x="270" y="119" fill="#7f98b4" font-size="10" font-weight="700">Real Results</text>
+    <text x="270" y="149" fill="#fff" font-size="13" font-weight="800">Reach</text><text x="430" y="149" fill="#55e2a0" font-size="13" font-weight="800">248K</text><text x="466" y="149" fill="#55e2a0" font-size="8">+72%</text>
+    <text x="270" y="176" fill="#fff" font-size="13" font-weight="800">Engagement</text><text x="430" y="176" fill="#55e2a0" font-size="13" font-weight="800">12.6K</text><text x="466" y="176" fill="#55e2a0" font-size="8">+48%</text>
+    <text x="270" y="203" fill="#fff" font-size="13" font-weight="800">Website Clicks</text><text x="430" y="203" fill="#55e2a0" font-size="13" font-weight="800">4.2K</text><text x="466" y="203" fill="#55e2a0" font-size="8">+91%</text>
+    <path d="M272 248 C310 237 325 222 352 231 S397 205 420 214 S451 179 476 188" fill="none" stroke="#3b76ff" stroke-width="4"/>
+   </svg>
+  </div>
+  <div class="performance-copy">
+   <div class="label" style="color:var(--cyan);font-size:11px;font-weight:800">— &nbsp;Performance Snapshot</div>
+   <h2>Data-Driven Decisions.<br>Real Growth.</h2>
+   <p class="copy">We track, analyze and optimize every campaign to ensure you get the best performance and ROI.</p>
+   <a class="btn ghost" href="#portfolio">View Performance →</a>
+   <div class="mini-chart" style="margin-top:16px">
+    <div style="font-size:10px;color:#9bb0c8">Traffic Growth</div><strong>+62%</strong>
+    <div class="bars"><i style="--h:32%"></i><i style="--h:43%"></i><i style="--h:51%"></i><i style="--h:63%"></i><i style="--h:77%"></i><i style="--h:91%"></i></div>
+    <div class="chart-list"><span>Website Traffic <b>62%</b></span><span>Engagement <b>48%</b></span><span>Conversions <b>91%</b></span><span>ROI <b>73%</b></span></div>
+   </div>
+   <div class="live-analytics" aria-label="Live-style campaign analytics demo">
+    <div class="live-head"><span class="live-title">Campaign performance</span><span class="live-state"><i class="live-dot"></i>Updating</span></div>
+    <svg class="live-chart" viewBox="0 0 520 116" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="liveStroke" x1="0" x2="1"><stop stop-color="#35d7ff"/><stop offset="1" stop-color="#6f5bff"/></linearGradient>
+        <linearGradient id="liveArea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#35d7ff"/><stop offset="1" stop-color="#6f5bff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <path class="live-grid" d="M0 18H520M0 48H520M0 78H520M0 108H520"/>
+      <path id="liveAreaPath" class="live-area" d="M0 91 L65 78 L130 83 L195 60 L260 66 L325 43 L390 50 L455 25 L520 31 L520 116 L0 116 Z"/>
+      <path id="liveLine" class="live-line" d="M0 91 L65 78 L130 83 L195 60 L260 66 L325 43 L390 50 L455 25 L520 31"/>
+      <circle id="livePoint" class="live-point" cx="520" cy="31" r="5"/>
+    </svg>
+    <div class="live-values"><div class="live-value"><b id="liveReach">248K</b><span>Reach</span></div><div class="live-value"><b id="liveLeads">1,284</b><span>Leads</span></div><div class="live-value"><b id="liveConv">8.4%</b><span>Conversion</span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+
+<section id="portfolio" class="portfolio-reference">
+  <div class="container">
+    <div class="portfolio-intro reveal-section">
+      <div class="eyebrow"><span></span> Our Portfolio <span></span></div>
+      <h2>Real Projects. <em>Real Results.</em></h2>
+      <p>Explore recent work across paid campaigns, social media systems, and conversion-focused websites.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <article class="case-card case-growth reveal">
+        <div class="case-head">
+          <div class="case-title">
+            <div class="case-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 18V10M10 18V6M16 18V9M22 18V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="m4 8 5-3 5 2 7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Growth Campaigns</h3>
+              <p>Meta Ads · Google Ads · Lead Generation</p>
+            </div>
+          </div>
+          <span class="case-tag">Paid Social</span>
+        </div>
+
+        <div class="case-visual growth-visual">
+          <div class="visual-glow"></div>
+          <div class="phone-mockup">
+            <div class="phone-top"></div>
+            <div class="phone-brand"><b>N</b> NexSkill</div>
+            <div class="phone-copy">Grow Your<br><strong>Business</strong></div>
+            <div class="phone-sub">with Digital Marketing</div>
+            <div class="mini-cta">Get Started →</div>
+            <div class="social-dots"><i></i><i></i><i></i></div>
+            <div class="mini-chart">
+              <span style="height:28%"></span><span style="height:40%"></span><span style="height:54%"></span><span style="height:69%"></span><span style="height:86%"></span>
+            </div>
+          </div>
+          <div class="ad-platforms">
+            <span>◎</span><span>◆</span><span>◈</span>
+          </div>
+          <div class="result-panel">
+            <small>Campaign Reach</small><b>248K</b><strong>↗ 72%</strong>
+            <hr>
+            <small>Leads</small><b>12.6K</b><strong>↗ 48%</strong>
+            <hr>
+            <small>Conversions</small><b>4.2K</b><strong>↗ 91%</strong>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <p>High-performing ad campaigns built around audience targeting, creative testing, and measurable ROI.</p>
+          <div class="benefits">
+            <span><i>◎</i>Targeted Audience</span>
+            <span><i>↗</i>Better ROI</span>
+            <span><i>⌁</i>Scalable Growth</span>
+          </div>
+          <a class="case-link" href="#contact">View Case Study <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="case-card case-social reveal">
+        <div class="case-head">
+          <div class="case-title">
+            <div class="case-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 18.5 4 21l.7-3.5A7.5 7.5 0 0 1 3 12.5 7.5 7.5 0 0 1 10.5 5h3A7.5 7.5 0 0 1 21 12.5 7.5 7.5 0 0 1 13.5 20h-3c-1.6 0-3.1-.5-4.5-1.5Z" stroke="currentColor" stroke-width="1.7"/>
+                <circle cx="9" cy="12.5" r="1" fill="currentColor"/><circle cx="12" cy="12.5" r="1" fill="currentColor"/><circle cx="15" cy="12.5" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Social Media System</h3>
+              <p>Content · Strategy · Community</p>
+            </div>
+          </div>
+          <span class="case-tag">Social Media</span>
+        </div>
+
+        <div class="case-visual social-visual">
+          <div class="social-rail"><span>◎</span><span>f</span><span>▶</span><span>♪</span><span>𝕏</span></div>
+          <div class="social-phone">
+            <div class="phone-top"></div>
+            <div class="profile-line"><b>N</b><span>nexskill</span></div>
+            <div class="profile-stats"><b>542<small>Posts</small></b><b>12.8K<small>Followers</small></b><b>356<small>Following</small></b></div>
+            <div class="content-icons"><span>◌</span><span>◇</span><span>♡</span><span>□</span></div>
+            <div class="content-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="engagement-panel">
+            <small>Engagement Rate</small><b>+248%</b>
+            <small>Followers Growth</small><b>+182%</b>
+            <small>Reach</small><b>+310%</b>
+          </div>
+        </div>
+
+        <div class="case-body">
+          <p>A consistent social system combining creative content, strategy, publishing, and community growth.</p>
+          <div class="benefits">
+            <span><i>✓</i>Creative Content</span>
+            <span><i>↗</i>Audience Growth</span>
+            <span><i>◎</i>Brand Awareness</span>
+          </div>
+          <a class="case-link" href="#contact">View Case Study <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="case-card case-web reveal">
+        <div class="case-head">
+          <div class="case-title">
+            <div class="case-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M3.8 12h16.4M12 3.5c2.1 2.3 3.2 5.1 3.2 8.5s-1.1 6.2-3.2 8.5c-2.1-2.3-3.2-5.1-3.2-8.5S9.9 5.8 12 3.5Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Conversion Website</h3>
+              <p>Design · Development · CRO</p>
+            </div>
+          </div>
+          <span class="case-tag">Web Development</span>
+        </div>
+
+        <div class="case-visual web-visual">
+          <div class="laptop">
+            <div class="laptop-screen">
+              <div class="browser-bar"><i></i><i></i><i></i><span>NexSkill</span></div>
+              <div class="web-hero">
+                <div><b>Build Your<br><em>Digital Future.</em></b><small>Learn. Create. Grow.</small><button>Get Started →</button></div>
+                <div class="web-person"></div>
+              </div>
+              <div class="web-cards"><span></span><span></span><span></span></div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
+          <div class="mobile-web">
+            <div class="browser-bar"></div>
+            <b>Master Digital<br>Skills.</b><span>Build Your Future.</span>
+            <button>Get Started →</button>
+          </div>
+          <div class="conversion-panel"><small>Conversion Rate</small><b>6.8% ↗</b><strong>+3.2%</strong><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+
+        <div class="case-body">
+          <p>High-converting websites with fast interfaces, clear messaging, responsive layouts, and conversion-focused UX.</p>
+          <div class="benefits">
+            <span><i>✓</i>Modern Design</span>
+            <span><i>✦</i>Fast Loading</span>
+            <span><i>⌕</i>SEO Optimized</span>
+          </div>
+          <a class="case-link" href="#contact">View Case Study <span>→</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="portfolio-stats reveal">
+      <div><b>245%</b><span>Avg. Growth in Reach</span></div>
+      <div><b>182%</b><span>Avg. Lead Increase</span></div>
+      <div><b>310%</b><span>Avg. Conversion Growth</span></div>
+      <div><b>50+</b><span>Happy Clients</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonials reveal-section">
+ <div class="container section-grid">
+  <div><div class="label" style="color:var(--cyan);font-size:11px;font-weight:800">— &nbsp;What Our Clients Say</div><h2>Trusted by Businesses<br><span class="gradient">Worldwide.</span></h2></div>
+  <div class="test-grid">
+   <article class="test reveal"><div class="person"><div class="avatar photo"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=85" alt="Rohit Sharma portrait" loading="lazy"></div><div><b>Rohit Sharma</b><br><small style="color:#7e96b0">E-commerce Brand</small></div></div><p>“NexSkill transformed our online presence. The results were beyond our expectations!”</p><div class="stars">★★★★★</div></article>
+   <article class="test pop reveal"><div class="person"><div class="avatar photo"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=85" alt="Priya Mehta portrait" loading="lazy"></div><div><b>Priya Mehta</b><br><small style="color:#7e96b0">Local Business</small></div></div><p>“Their team is professional, creative and always delivers on time. Highly recommended.”</p><div class="stars">★★★★★</div></article>
+   <article class="test reveal"><div class="person"><div class="avatar photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=85" alt="Amit Verma portrait" loading="lazy"></div><div><b>Amit Verma</b><br><small style="color:#7e96b0">Education Platform</small></div></div><p>“The best digital marketing agency we've worked with. Our leads increased by 3×.”</p><div class="stars">★★★★★</div></article>
+  </div>
+ </div>
+</section>
+
+<section id="pricing" class="reveal-section">
+ <div class="container section-grid">
+  <div><div class="label" style="color:var(--cyan);font-size:11px;font-weight:800">— &nbsp;Pricing</div><h2>Simple Plans.<br><span class="gradient">Big Possibilities.</span></h2><p class="copy">Choose the right plan for your business and start your growth journey today.</p></div>
+  <div class="pricing-grid">
+   <article class="price-card reveal"><h3>Starter</h3><p style="color:#8198b2;font-size:10px">Perfect for small businesses</p><div class="price">₹3,499.65 <small>/month</small></div><div class="price-note">Additional 30% reduction applied</div><ul class="features"><li>Social Media Management</li><li>Basic Analytics</li><li>Monthly Report</li></ul><a class="price-btn" href="#contact">Get Started</a></article>
+   <article class="price-card popular reveal"><span class="badge">Most Popular</span><h3>Growth</h3><p style="color:#8198b2;font-size:10px">For growing brands</p><div class="price">₹6,999.65 <small>/month</small></div><div class="price-note">Additional 30% reduction applied</div><ul class="features"><li>All Starter Features</li><li>Google & Meta Ads</li><li>Advanced Analytics</li><li>Priority Support</li></ul><a class="price-btn" href="#contact">Get Started</a></article>
+   <article class="price-card reveal"><h3>Pro</h3><p style="color:#8198b2;font-size:10px">For established businesses</p><div class="price">₹12,249.65 <small>/month</small></div><div class="price-note">Additional 30% reduction applied</div><ul class="features"><li>All Growth Features</li><li>Custom Strategy</li><li>Dedicated Manager</li><li>Premium Support</li></ul><a class="price-btn" href="#contact">Get Started</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="contact" style="padding:48px 0">
+ <div class="container" style="text-align:center"><h2>Ready to <span class="gradient">Grow?</span></h2><p class="copy" style="margin:auto">Let's build a smarter digital presence for your brand.</p><div class="btns" style="justify-content:center"><a class="btn primary" href="mailto:hello@nexskill.example">Get Started →</a></div></div>
+</section>
+</main>
+
+
+<div class="nexskill-support-widget" aria-label="NexSkill customer support">
+  <div class="support-panel" aria-hidden="true">
+    <div class="support-panel-title">Need help?</div>
+    <div class="support-panel-subtitle">Chat with NexSkill</div>
+  </div>
+
+  <div class="support-actions">
+    
+<div class="draggable-whatsapp" id="draggableWhatsapp" title="Drag to move WhatsApp button">
+  <a class="support-btn whatsapp" href="https://wa.link/kd3252" target="_blank" rel="noopener noreferrer" aria-label="Chat with NexSkill on WhatsApp">
+      <span class="support-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.6-4.1A8 8 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M8.3 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.4 1.8 2.5 2.4l.6-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.3.6-.2.8-.8 1.3-1.5 1.3-2.1-.1-5.9-3.5-6.6-5.7-.2-.5-.1-1 .2-1.4Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="support-label">WhatsApp</span>
+    </a>
+</div>
+
+    <a class="support-btn telegram" href="https://t.me/+msZqTxoYmBRmNDI1" target="_blank" rel="noopener noreferrer" aria-label="Join NexSkill on Telegram">
+      <span class="support-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m20.4 4.2-2.8 15.3c-.2 1.1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-7.9c.4-.4-.1-.6-.6-.2L5.5 13.8.9 12.4c-1-.3-1-1 .2-1.5L19 3.9c.8-.3 1.6.2 1.4.3Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="support-label">Telegram</span>
+    </a>
+  </div>
+</div>
+
+
+<footer>NexSkill — Digital Marketing & Creative Solutions</footer>
+
+<script>
+const revealItems=document.querySelectorAll(".reveal,.reveal-section");
+const revealObserver=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+revealItems.forEach((el,i)=>{
+  el.style.transitionDelay=`${Math.min(i*45,240)}ms`;
+  revealObserver.observe(el);
+});
+
+const counters=document.querySelectorAll(".counter");
+const obs=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(!e.isIntersecting||e.target.dataset.done)return;
+  e.target.dataset.done="1";
+  const el=e.target,target=Number(el.dataset.target),duration=1200,start=performance.now();
+  function tick(now){
+   const p=Math.min((now-start)/duration,1),ease=1-Math.pow(1-p,3);
+   el.textContent=Math.round(target*ease);
+   if(p<1)requestAnimationFrame(tick); else el.textContent=target;
+  }
+  requestAnimationFrame(tick);obs.unobserve(el);
+ });
+},{threshold:.45});
+counters.forEach(c=>obs.observe(c));
+
+
+// Live-style analytics demo: values update locally to create an active dashboard feel.
+const liveLine=document.getElementById("liveLine"), liveArea=document.getElementById("liveAreaPath"), livePoint=document.getElementById("livePoint");
+const liveReach=document.getElementById("liveReach"), liveLeads=document.getElementById("liveLeads"), liveConv=document.getElementById("liveConv");
+if(liveLine&&liveArea&&livePoint){
+  const base=[91,78,83,60,66,43,50,25,31];
+  const render=()=>{
+    const vals=base.map((v,i)=>Math.max(18,Math.min(100,v+(Math.random()*10-5))));
+    const pts=vals.map((y,i)=>`${i*65} ${y}`).join(" L");
+    liveLine.setAttribute("d","M"+pts);
+    liveArea.setAttribute("d","M"+pts+" L520 116 L0 116 Z");
+    livePoint.setAttribute("cx","520"); livePoint.setAttribute("cy",String(vals[8]));
+    liveReach.textContent=(248+Math.round(Math.random()*8))+"K";
+    liveLeads.textContent=(1284+Math.round(Math.random()*38)).toLocaleString();
+    liveConv.textContent=(8.4+(Math.random()*.5-.25)).toFixed(1)+"%";
+  };
+  render(); setInterval(render,3500);
+}
+
+const links=document.querySelectorAll(".navlinks a");
+const sections=[...links].map(a=>document.querySelector(a.getAttribute("href"))).filter(Boolean);
+const navObs=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting){
+   links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));
+  }
+ });
+},{rootMargin:"-45% 0px -45% 0px",threshold:0});
+sections.forEach(s=>navObs.observe(s));
+</script>
+
+<script>
+(() => {
+  const el = document.getElementById("draggableWhatsapp");
+  if (!el) return;
+
+  const STORAGE_KEY = "nexskill_whatsapp_position";
+  let dragging = false;
+  let pointerId = null;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  function setPosition(left, top) {
+    const rect = el.getBoundingClientRect();
+    const maxLeft = Math.max(8, window.innerWidth - rect.width - 8);
+    const maxTop = Math.max(8, window.innerHeight - rect.height - 8);
+
+    left = clamp(left, 8, maxLeft);
+    top = clamp(top, 8, maxTop);
+
+    el.style.left = left + "px";
+    el.style.top = top + "px";
+    el.style.right = "auto";
+    el.style.bottom = "auto";
+  }
+
+  function savePosition() {
+    const rect = el.getBoundingClientRect();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      left: rect.left,
+      top: rect.top
+    }));
+  }
+
+  function restorePosition() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (saved && Number.isFinite(saved.left) && Number.isFinite(saved.top)) {
+        setPosition(saved.left, saved.top);
+      }
+    } catch (_) {}
+  }
+
+  el.addEventListener("pointerdown", (event) => {
+    // Only dragging the button itself; links still open on normal click/tap.
+    dragging = false;
+    pointerId = event.pointerId;
+
+    const rect = el.getBoundingClientRect();
+    offsetX = event.clientX - rect.left;
+    offsetY = event.clientY - rect.top;
+
+    el.setPointerCapture(pointerId);
+    el.classList.add("is-dragging");
+  });
+
+  el.addEventListener("pointermove", (event) => {
+    if (pointerId !== event.pointerId) return;
+
+    const dx = event.clientX - (el.getBoundingClientRect().left + offsetX);
+    const dy = event.clientY - (el.getBoundingClientRect().top + offsetY);
+
+    if (!dragging && Math.hypot(dx, dy) < 7) return;
+    dragging = true;
+
+    setPosition(event.clientX - offsetX, event.clientY - offsetY);
+    event.preventDefault();
+  });
+
+  function finishDrag(event) {
+    if (pointerId !== event.pointerId) return;
+
+    if (el.hasPointerCapture(pointerId)) {
+      el.releasePointerCapture(pointerId);
+    }
+
+    el.classList.remove("is-dragging");
+
+    if (dragging) {
+      savePosition();
+      // Prevent the anchor from activating after a real drag.
+      el.dataset.justDragged = "1";
+      setTimeout(() => delete el.dataset.justDragged, 80);
+    }
+
+    dragging = false;
+    pointerId = null;
+  }
+
+  el.addEventListener("pointerup", finishDrag);
+  el.addEventListener("pointercancel", finishDrag);
+
+  const link = el.querySelector("a");
+  if (link) {
+    link.addEventListener("click", (event) => {
+      if (el.dataset.justDragged === "1") {
+        event.preventDefault();
+      }
+    });
+  }
+
+  window.addEventListener("resize", () => {
+    const rect = el.getBoundingClientRect();
+    setPosition(rect.left, rect.top);
+  });
+
+  restorePosition();
+})();
+</script>
+
+</body>
+</html>
